@@ -1,8 +1,10 @@
-package com.icerabbit.nettytango.example.unpacking.client;
+package com.icerabbit.nettytango.example.idle.client;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
+import io.netty.handler.codec.LineBasedFrameDecoder;
+import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 import io.netty.util.CharsetUtil;
 
@@ -16,8 +18,9 @@ public class ClientChannelInitializer extends ChannelInitializer<SocketChannel> 
     @Override
     protected void initChannel(SocketChannel socketChannel) throws Exception {
         ChannelPipeline pipeline = socketChannel.pipeline();
-        //客户端只需要发送数据,只需要编码器
+        pipeline.addLast(new LineBasedFrameDecoder(2048));
+        pipeline.addLast(new StringDecoder(CharsetUtil.UTF_8));
         pipeline.addLast(new StringEncoder(CharsetUtil.UTF_8));
-        pipeline.addLast(new ClientHandler());
+        pipeline.addLast(new ChatSocketClientHandler());
     }
 }

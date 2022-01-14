@@ -1,4 +1,4 @@
-package com.icerabbit.nettytango.example.unpacking.server;
+package com.icerabbit.nettytango.example.decoder.line.server;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;

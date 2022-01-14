@@ -1,4 +1,4 @@
-package com.icerabbit.nettytango.example.unpacking.client;
+package com.icerabbit.nettytango.example.decoder.line.client;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;

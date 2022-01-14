@@ -1,8 +1,11 @@
-package com.icerabbit.nettytango.example.unpacking.client;
+package com.icerabbit.nettytango.example.heartbeat.client;
 
+import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
+import io.netty.handler.codec.LineBasedFrameDecoder;
+import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 import io.netty.util.CharsetUtil;
 
@@ -13,11 +16,17 @@ import io.netty.util.CharsetUtil;
  * @Date 2022/1/13 11:43
  **/
 public class ClientChannelInitializer extends ChannelInitializer<SocketChannel> {
+    private Bootstrap bootstrap;
+
+    public ClientChannelInitializer(Bootstrap bootstrap){
+        this.bootstrap = bootstrap;
+    }
+
     @Override
     protected void initChannel(SocketChannel socketChannel) throws Exception {
         ChannelPipeline pipeline = socketChannel.pipeline();
-        //客户端只需要发送数据,只需要编码器
+        pipeline.addLast(new StringDecoder(CharsetUtil.UTF_8));
         pipeline.addLast(new StringEncoder(CharsetUtil.UTF_8));
-        pipeline.addLast(new ClientHandler());
+        pipeline.addLast(new HeartBeatHandler(bootstrap));
     }
 }
