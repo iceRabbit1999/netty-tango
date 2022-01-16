@@ -1,4 +1,4 @@
-package com.icerabbit.nettytango.example.websocket;
+package com.icerabbit.nettytango.advanced.websocket;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;

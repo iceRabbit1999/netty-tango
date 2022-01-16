@@ -1,4 +1,4 @@
-package com.icerabbit.nettytango.example.heartbeat.client;
+package com.icerabbit.nettytango.advanced.webchat.client;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
@@ -26,7 +26,7 @@ public class Client {
         Bootstrap bootstrap = new Bootstrap();
         bootstrap.group(eventLoopGroup)
                 .channel(NioSocketChannel.class)
-                .handler(new ClientChannelInitializer(bootstrap));
+                .handler(new ClientChannelInitializer());
 
         ChannelFuture future = bootstrap.connect("localhost", 8080).sync();
         Channel channel = future.channel();

@@ -1,4 +1,4 @@
-package com.icerabbit.nettytango.example.heartbeat.server;
+package com.icerabbit.nettytango.advanced.heartbeat.server;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;

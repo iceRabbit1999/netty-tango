@@ -1,4 +1,4 @@
-package com.icerabbit.nettytango.example.webchat.client;
+package com.icerabbit.nettytango.advanced.webchat.client;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;

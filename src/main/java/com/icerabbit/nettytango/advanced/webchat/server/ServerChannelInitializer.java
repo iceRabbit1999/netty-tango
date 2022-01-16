@@ -1,4 +1,4 @@
-package com.icerabbit.nettytango.example.webchat.server;
+package com.icerabbit.nettytango.advanced.webchat.server;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;

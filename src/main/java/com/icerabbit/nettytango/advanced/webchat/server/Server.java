@@ -1,4 +1,4 @@
-package com.icerabbit.nettytango.example.heartbeat.server;
+package com.icerabbit.nettytango.advanced.webchat.server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;

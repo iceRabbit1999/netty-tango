@@ -1,4 +1,4 @@
-package com.icerabbit.nettytango.example.heartbeat.client;
+package com.icerabbit.nettytango.advanced.heartbeat.client;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;

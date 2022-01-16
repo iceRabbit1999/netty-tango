@@ -1,12 +1,11 @@
-package com.icerabbit.nettytango.example.heartbeat.client;
+package com.icerabbit.nettytango.advanced.heartbeat.server;
 
-import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
-import io.netty.handler.codec.LineBasedFrameDecoder;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
+import io.netty.handler.timeout.IdleStateHandler;
 import io.netty.util.CharsetUtil;
 
 /**
@@ -15,18 +14,13 @@ import io.netty.util.CharsetUtil;
  * @Author iceRabbit
  * @Date 2022/1/13 11:43
  **/
-public class ClientChannelInitializer extends ChannelInitializer<SocketChannel> {
-    private Bootstrap bootstrap;
-
-    public ClientChannelInitializer(Bootstrap bootstrap){
-        this.bootstrap = bootstrap;
-    }
-
+public class ServerChannelInitializer extends ChannelInitializer<SocketChannel> {
     @Override
     protected void initChannel(SocketChannel socketChannel) throws Exception {
         ChannelPipeline pipeline = socketChannel.pipeline();
         pipeline.addLast(new StringDecoder(CharsetUtil.UTF_8));
         pipeline.addLast(new StringEncoder(CharsetUtil.UTF_8));
-        pipeline.addLast(new HeartBeatHandler(bootstrap));
+        pipeline.addLast(new IdleStateHandler(5,0,0));
+        pipeline.addLast(new ReadDataHandler());
     }
 }
