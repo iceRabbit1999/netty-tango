@@ -1,4 +1,4 @@
-package com.icerabbit.netty_in_action.part2.echo_cs.server;
+package com.icerabbit.netty_in_action.chapter2.echo_cs.server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;

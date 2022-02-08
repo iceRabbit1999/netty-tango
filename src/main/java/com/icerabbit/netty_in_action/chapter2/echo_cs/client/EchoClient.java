@@ -1,4 +1,4 @@
-package com.icerabbit.netty_in_action.part2.echo_cs.client;
+package com.icerabbit.netty_in_action.chapter2.echo_cs.client;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;

@@ -1,4 +1,4 @@
-package com.icerabbit.netty_in_action.part2.echo_cs.client;
+package com.icerabbit.netty_in_action.chapter2.echo_cs.client;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
